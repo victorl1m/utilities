@@ -31,9 +31,7 @@ export default function VideoDL() {
     setError(null);
 
     try {
-      const response = await fetch(
-        `http://52.67.83.187:3000/video-info?url=${url}`
-      );
+      const response = await fetch(`http://52.67.83.187/video-info?url=${url}`);
       if (!response.ok) {
         throw new Error("Ocorreu um erro ao obter as informações do vídeo");
       }
@@ -67,13 +65,13 @@ export default function VideoDL() {
   // in work
   function downloadVideo() {
     const a = document.createElement("a");
-    a.href = "http://52.67.83.187:3000/downloadvideo?url=" + url;
+    a.href = "http://52.67.83.187/downloadvideo?url=" + url;
     a.click();
   }
 
   function downloadOnlyAudio() {
     const a = document.createElement("a");
-    a.href = "http://52.67.83.187:3000/downloadaudio?url=" + url;
+    a.href = "http://52.67.83.187/downloadaudio?url=" + url;
     a.click();
   }
 
